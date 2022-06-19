@@ -20,3 +20,7 @@ Spring Managed Components
 @Autowired tells spring to inject an instance of the annotated class
 @Qualifier tells spring which class is to be injected in case of multiple implementations of an interface
 @Primary tells spring to use this class for injection in case of multiple implementations. Primary Bean will be injected if no Qualifier is defined
+
+@Profile Profiles allows you to control your spring application in different run time environments
+Services with same name gives conflict in dependency injection. Spring active profiles solves this by activating one of the many profiles.
+Default Profile is selected if no active profile is found

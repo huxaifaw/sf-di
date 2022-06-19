@@ -3,10 +3,7 @@ package zaifi.springframework.sfdi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import zaifi.springframework.sfdi.controller.ConstructorInjectedController;
-import zaifi.springframework.sfdi.controller.MyController;
-import zaifi.springframework.sfdi.controller.PropertyInjectedController;
-import zaifi.springframework.sfdi.controller.SetterInjectedController;
+import zaifi.springframework.sfdi.controller.*;
 
 import java.util.Optional;
 
@@ -15,6 +12,10 @@ public class SfDiApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(SfDiApplication.class, args);
+
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
+
 		MyController myController = (MyController) ctx.getBean("myController");
 		String greetings = myController.sayGreetings();
 		System.out.println(greetings);
