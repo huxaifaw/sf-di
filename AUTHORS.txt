@@ -1,0 +1,22 @@
+Dependency Injection for 5 years old.
+"I want something to drink with lunch" and then we will make sure you have something when you sit down to eat.
+
+Dependency Injection is where a needed dependency is injected by another object.
+The class being injected has no responsibility in instantiating the object being injected.
+
+DI is preferred via Interfaces because it allows to decide implementation at runtime.
+
+Inversion of Control is a technique to allow dependencies to be injected at runtime. Dependencies are not predetermined.
+
+DI is how you write your classes and IoC is runtime environment which decides which objects should be injected. 
+
+Favor using Contructor Injection over Setter Injection.
+Use final properties for injected components.
+
+Spring Managed Components
+
+@Controller
+@Service
+@Autowired tells spring to inject an instance of the annotated class
+@Qualifier tells spring which class is to be injected in case of multiple implementations of an interface
+@Primary tells spring to use this class for injection in case of multiple implementations. Primary Bean will be injected if no Qualifier is defined
