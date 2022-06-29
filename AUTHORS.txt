@@ -24,3 +24,25 @@ Spring Managed Components
 @Profile Profiles allows you to control your spring application in different run time environments
 Services with same name gives conflict in dependency injection. Spring active profiles solves this by activating one of the many profiles.
 Default Profile is selected if no active profile is found
+
+-- Spring Bean Life Cycle --
+Instantiate -> Populate Properties -> BeanNameAware -> BeanFactoryAware -> ApplicationContextAware -> PreInitialization (BeanPostProcessors) -> Custom Initialization ->  PostInitialization (BeanPostProcessors -> Bean Ready To Use
+Container Shutdown -> Disposable Bean's destroy -> Custom Destroy Method -> Terminated
+
+-- Callback Interfaces --
+Spring has two interfaces you can implement for callback events
+-> InitializingBean.afterPropertiesSet() - called after properties are set
+-> DisposableBean.destory() -> called during bean destruction
+
+-- Spring Bean Life Cycle Annotations --
+@PostConstruct annotated methods are called after the bean has been constructed but before it is returned to the requesting object.
+@PreDestroy annotated methods are called just before bean is destroyed by the container.
+
+-- Bean PostProcessors --
+They give you a means to tap into the Spring Context Life Cycle and interact with beans as they are processed.
+Implement interface -> BeanPostProcessor
+  -postProcessBeforeInitialization
+  -postProcessAfterInitialization
+Never used in reality.
+
+Spring has over 14 'Aware' Interfaces. They are used to interact with Spring infrastructure.
