@@ -10,7 +10,9 @@ Inversion of Control is a technique to allow dependencies to be injected at runt
 
 DI is how you write your classes and IoC is runtime environment which decides which objects should be injected. 
 
-Favor using Contructor Injection over Setter Injection.
+* Dependency Inversion addresses abstractions. Whereas, Dependency Injection refers to injection of dependencies into classes.
+
+Favor using Constructor Injection over Setter Injection.
 Use final properties for injected components.
 
 Spring Managed Components
