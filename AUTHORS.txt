@@ -63,3 +63,14 @@ The name of the function defined as Bean becomes bean name.
         -- here 'constructorGreetingService' is the name of the bean.
 
         The name can be overridden using @Bean("beanName").
+
+Spring Bean Scopes:
+    - Singleton
+    - Prototype
+    - Request
+    - Session
+    - Global Session
+    - Application
+    - WebSocket
+
+    -- ConfigurableBeanFactory to get bean scope

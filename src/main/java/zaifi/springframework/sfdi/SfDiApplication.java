@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import zaifi.springframework.sfdi.controller.*;
+import zaifi.springframework.sfdi.services.PrototypeBean;
+import zaifi.springframework.sfdi.services.SingletonBean;
 
 import java.util.Optional;
 
@@ -42,6 +44,16 @@ public class SfDiApplication {
 		Optional<String> optionalString = Optional.empty();
 		System.out.println(optionalString.isPresent());
 
+		System.out.println("---Bean Scope---");
+		SingletonBean singletonBean1 = ctx.getBean(SingletonBean.class);
+		System.out.println(singletonBean1.getMyScope());
+		SingletonBean singletonBean2 = ctx.getBean(SingletonBean.class);
+		System.out.println(singletonBean2.getMyScope());
+
+		PrototypeBean prototypeBean1 = ctx.getBean(PrototypeBean.class);
+		System.out.println(prototypeBean1.getMyScope());
+		PrototypeBean prototypeBean2 = ctx.getBean(PrototypeBean.class);
+		System.out.println(prototypeBean2.getMyScope());
 	}
 
 }
