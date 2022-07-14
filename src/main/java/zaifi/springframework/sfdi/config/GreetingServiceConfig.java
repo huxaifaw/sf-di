@@ -9,7 +9,6 @@ import zaifi.springframework.sfdi.repositories.EnglishGreetingRepository;
 import zaifi.springframework.sfdi.repositories.EnglishGreetingRepositoryImpl;
 import zaifi.springframework.sfdi.services.*;
 
-@PropertySource("classpath:datasource.properties")
 @ImportResource("classpath:sfdi-config.xml")
 @Configuration
 public class GreetingServiceConfig {
