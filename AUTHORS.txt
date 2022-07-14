@@ -92,3 +92,8 @@ Property Hierarchy
   -- SPRING_APPLICATION_JSON
   -- Command Line Arguments
   -- Test Properties (for testing)
+
+You can override the properties.
+    Go to
+    Edit Configurations -> set environment variables or pass command line arguments to the program and
+    properties will be loaded from the specific place depending on the property hierarchy.
