@@ -48,3 +48,16 @@ Implement interface -> BeanPostProcessor
 Never used in reality.
 
 Spring has over 14 'Aware' Interfaces. They are used to interact with Spring infrastructure.
+
+Component Scanners are used to scan for spring beans in a spring boot application. The beans found are brought into the spring context.
+By default, component scans are performed in the base package (the package in which SpringBootApplication lies).
+To perform component scans in other packages, @ComponentScan annotation is used on top of @SpringBootApplication.
+
+ComponentScans are expensive when you have large number of files of Spring Beans.
+In this case, @Configuration annotation is used to define Spring Beans and brought them in Spring Context.
+The name of the function defined as Bean becomes bean name.
+        @Bean
+        ConstructorGreetingServiceImpl constructorGreetingService() {
+            return new ConstructorGreetingServiceImpl();
+        }
+        -- here 'constructorGreetingService' is the name of the bean.
