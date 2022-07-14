@@ -61,3 +61,5 @@ The name of the function defined as Bean becomes bean name.
             return new ConstructorGreetingServiceImpl();
         }
         -- here 'constructorGreetingService' is the name of the bean.
+
+        The name can be overridden using @Bean("beanName").

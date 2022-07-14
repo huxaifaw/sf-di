@@ -2,12 +2,30 @@ package zaifi.springframework.sfdi.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import zaifi.springframework.sfdi.services.ConstructorGreetingServiceImpl;
-import zaifi.springframework.sfdi.services.PropertyGreetingServiceImpl;
-import zaifi.springframework.sfdi.services.SetterGreetingServiceImpl;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
+import zaifi.springframework.sfdi.services.*;
 
 @Configuration
 public class GreetingServiceConfig {
+
+    @Profile({"ES", "default"})
+    @Bean("i18nService")
+    I18nSpanishGreetingService i18nSpanishGreetingService() {
+        return new I18nSpanishGreetingService();
+    }
+
+    @Profile("EN")
+    @Bean
+    I18nEnglishGreetingService i18nService() {
+        return new I18nEnglishGreetingService();
+    }
+
+    @Primary
+    @Bean
+    PrimaryGreetingServiceImpl primaryGreetingServiceImpl() {
+        return new PrimaryGreetingServiceImpl();
+    }
 
     @Bean
     ConstructorGreetingServiceImpl constructorGreetingServiceImpl() {
