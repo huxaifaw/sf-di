@@ -2,14 +2,12 @@ package zaifi.springframework.sfdi.config;
 
 import com.springframework.pets.services.PetService;
 import com.springframework.pets.services.PetServiceFactory;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.*;
 import zaifi.springframework.sfdi.repositories.EnglishGreetingRepository;
 import zaifi.springframework.sfdi.repositories.EnglishGreetingRepositoryImpl;
 import zaifi.springframework.sfdi.services.*;
 
+@ImportResource("classpath:sfdi-config.xml")
 @Configuration
 public class GreetingServiceConfig {
 
@@ -63,7 +61,7 @@ public class GreetingServiceConfig {
          return new PropertyGreetingServiceImpl();
     }
 
-    @Bean
+    //@Bean
     SetterGreetingServiceImpl setterGreetingServiceImpl() {
         return new SetterGreetingServiceImpl();
     }
