@@ -2,14 +2,28 @@ package zaifi.springframework.sfdi.config;
 
 import com.springframework.pets.services.PetService;
 import com.springframework.pets.services.PetServiceFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
+import zaifi.springframework.sfdi.datasource.FakeDataSource;
 import zaifi.springframework.sfdi.repositories.EnglishGreetingRepository;
 import zaifi.springframework.sfdi.repositories.EnglishGreetingRepositoryImpl;
 import zaifi.springframework.sfdi.services.*;
 
+@PropertySource("classpath:datasource.properties")
 @ImportResource("classpath:sfdi-config.xml")
 @Configuration
 public class GreetingServiceConfig {
+
+    @Bean
+    FakeDataSource fakeDataSource(@Value("${zaifi.username}") String username,
+                                  @Value("${zaifi.passwd}") String passwd,
+                                  @Value("${zaifi.jdbcUrl}") String jdbcUrl) {
+        FakeDataSource fakeDataSource = new FakeDataSource();
+        fakeDataSource.setUsername(username);
+        fakeDataSource.setPasswd(passwd);
+        fakeDataSource.setJdbcUrl(jdbcUrl);
+        return fakeDataSource;
+    }
 
     @Bean
     PetServiceFactory petServiceFactory() {

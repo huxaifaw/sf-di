@@ -74,3 +74,21 @@ Spring Bean Scopes:
     - WebSocket
 
     -- ConfigurableBeanFactory to get bean scope
+
+Setting External Properties
+    - Command Line Arguments
+    - SPRING_APPLICATION_JSON
+    - JNDI
+    - OS Environment Variables
+    - Property Files (property file or yaml variants)
+
+Property Hierarchy
+  -- Lowest are the properties defined in JAR or WAR properties or YAML files
+  -- Next are the external property files to JAR via file system
+  -- Highest are the profile specific property files (in jar then external)
+  -- OS environment variables
+  -- Java System properties
+  -- JNDI
+  -- SPRING_APPLICATION_JSON
+  -- Command Line Arguments
+  -- Test Properties (for testing)
