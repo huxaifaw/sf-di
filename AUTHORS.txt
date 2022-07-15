@@ -97,3 +97,9 @@ You can override the properties.
     Go to
     Edit Configurations -> set environment variables or pass command line arguments to the program and
     properties will be loaded from the specific place depending on the property hierarchy.
+    e.g. for command line arguments, arguments are passed like '--zaifi.passwd=dbpasswdCmd'
+         for environment variables, 'ZAIFI_USERNAME=dbuserEnv'
+
+Profile Specific Properties File
+    -- for dev and qa files will be application-dev.properties and application-qa.properties, respectively.
+    -- Spring gives us the functionality to enable one of the profiles based on the properties file name.
