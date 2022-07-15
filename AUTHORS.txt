@@ -110,3 +110,7 @@ YML or YAML Properties File
 
        Multiple Profiles can be defined in a single yml file by --- dashes. The dashes indicate the start of a different property file.
        Indentation in a yml is important.
+
+Properties Binding
+    Properties can be bonded using @Configuration and @ConfigurationProperties annotations. Binding happens on the based on the class's attribute names.
+    The starting property name is specified in the @ConfigurationProperties annotation e.e. @ConfigurationProperties("zaifii")

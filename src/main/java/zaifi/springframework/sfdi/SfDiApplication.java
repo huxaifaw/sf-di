@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import zaifi.springframework.sfdi.config.FgConfigurations;
 import zaifi.springframework.sfdi.controller.*;
 import zaifi.springframework.sfdi.datasource.FakeDataSource;
 import zaifi.springframework.sfdi.services.PrototypeBean;
@@ -56,8 +57,13 @@ public class SfDiApplication {
 		PrototypeBean prototypeBean2 = ctx.getBean(PrototypeBean.class);
 		System.out.println(prototypeBean2.getMyScope());
 
+		System.out.println("---Fake Data Source---");
 		FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean("fakeDataSource");
 		System.out.println(fakeDataSource.getUsername() + "\n" + fakeDataSource.getPasswd() + "\n" + fakeDataSource.getJdbcUrl());
+
+		System.out.println("---Properties Binding---");
+		FgConfigurations fgConfigurations = ctx.getBean(FgConfigurations.class);
+		System.out.println(fgConfigurations.getUsername() + "\n" + fgConfigurations.getPasswd() + "\n" + fgConfigurations.getJdbcUrl());
 
 	}
 
