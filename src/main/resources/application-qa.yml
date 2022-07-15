@@ -1,0 +1,4 @@
+zaifi:
+  username: YML-qa-dbuser
+  passwd: YML-qa-dbpasswd
+  jdbcUrl: YML-qa-dburl

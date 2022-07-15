@@ -103,3 +103,10 @@ You can override the properties.
 Profile Specific Properties File
     -- for dev and qa files will be application-dev.properties and application-qa.properties, respectively.
     -- Spring gives us the functionality to enable one of the profiles based on the properties file name.
+
+YML or YAML Properties File
+    -- We can also use yml or yaml profile specific properties file. Both .properties and .yml files have their advantages and disadvantages.
+       It is encouraged to use of them in your Spring Project.
+
+       Multiple Profiles can be defined in a single yml file by --- dashes. The dashes indicate the start of a different property file.
+       Indentation in a yml is important.

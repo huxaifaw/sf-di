@@ -1,0 +1,18 @@
+spring:
+    profiles:
+        active:
+            - EN
+            - cat
+            - prod
+zaifi:
+    username: YMLdbuser
+    passwd: YMLdbpasswd
+    jdbcUrl: YMLdburl
+
+---
+spring:
+    profiles: dev
+zaifi:
+    username: YML-dev-dbuser
+    passwd: YML-dev-dbpasswd
+    jdbcUrl: YML-dev-dburl
