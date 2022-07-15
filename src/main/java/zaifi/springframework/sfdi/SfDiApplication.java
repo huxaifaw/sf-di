@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import zaifi.springframework.sfdi.config.FgConfigurations;
+import zaifi.springframework.sfdi.config.FgConstructorConfigurations;
 import zaifi.springframework.sfdi.controller.*;
 import zaifi.springframework.sfdi.datasource.FakeDataSource;
 import zaifi.springframework.sfdi.services.PrototypeBean;
@@ -64,6 +65,10 @@ public class SfDiApplication {
 		System.out.println("---Properties Binding---");
 		FgConfigurations fgConfigurations = ctx.getBean(FgConfigurations.class);
 		System.out.println(fgConfigurations.getUsername() + "\n" + fgConfigurations.getPasswd() + "\n" + fgConfigurations.getJdbcUrl());
+
+		System.out.println("---Constructor Binding---");
+		FgConstructorConfigurations fgConstructorConfigurations = ctx.getBean(FgConstructorConfigurations.class);
+		System.out.println(fgConstructorConfigurations.getUsername() + "\n" + fgConstructorConfigurations.getPasswd() + "\n" + fgConstructorConfigurations.getJdbcUrl());
 
 	}
 

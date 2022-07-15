@@ -3,12 +3,14 @@ package zaifi.springframework.sfdi.config;
 import com.springframework.pets.services.PetService;
 import com.springframework.pets.services.PetServiceFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
 import zaifi.springframework.sfdi.datasource.FakeDataSource;
 import zaifi.springframework.sfdi.repositories.EnglishGreetingRepository;
 import zaifi.springframework.sfdi.repositories.EnglishGreetingRepositoryImpl;
 import zaifi.springframework.sfdi.services.*;
 
+@EnableConfigurationProperties(FgConstructorConfigurations.class)
 @ImportResource("classpath:sfdi-config.xml")
 @Configuration
 public class GreetingServiceConfig {

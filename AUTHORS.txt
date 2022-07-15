@@ -114,3 +114,7 @@ YML or YAML Properties File
 Properties Binding
     Properties can be bonded using @Configuration and @ConfigurationProperties annotations. Binding happens on the based on the class's attribute names.
     The starting property name is specified in the @ConfigurationProperties annotation e.e. @ConfigurationProperties("zaifii")
+
+Constructor Binding
+    This allows your class attributes to be immutable so that they can't be changed during runtime by the application at any point.
+    @ConstructorBinding and @EnableConfigurationProperties annotations are used for this feature. This was introduced in version 2.2.0
